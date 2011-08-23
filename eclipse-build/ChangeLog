@@ -8,6 +8,11 @@
 	* pdebuild.xml: Do not uninstall the initializer.
 	Remove all empty metadata directories.
 
+2011-08-23  Sami Wagiaalla  <swagiaal@redhat.com>
+
+	* dependencies.properties: Remove org.apache.lucene entry.
+	* build.xml: apply remove-lucene-dependency.patch patch.
+
 2011-08-18  Sami Wagiaalla  <swagiaal@redhat.com>
 
 	* pdebuild.xml: Created new target copyDeps.

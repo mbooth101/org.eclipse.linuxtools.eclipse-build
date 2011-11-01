@@ -7,8 +7,8 @@ baseBuilder=
 eclipseBuilder=
 
 buildID="R3_7"
-baseBuilderTag="R3_7"
-eclipseBuilderTag="R3_7"
+baseBuilderTag="vM20111019-0800"
+eclipseBuilderTag="vM20111019-0800"
 label="3.7.0"
 fetchTests="yes"
 
@@ -66,6 +66,8 @@ mkdir -p "${workspace}"
 cvsRepo=":pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse"
 mapsRoot="org.eclipse.releng/maps"
 
+commonGitRepo="git://git.eclipse.org/gitroot/platform/eclipse.platform.common"
+
 # Fetch basebuilder
 if [ ! -e "${baseBuilder}" ]; then
   mkdir -p "${baseBuilder}"
@@ -115,6 +117,7 @@ fetchMasterFeature \
 -DmapsRoot=${mapsRoot} \
 -DmapsCheckoutTag=${buildID} \
 -DmapVersionTag=${buildID} \
+-Dcommonrepo=${commonGitRepo} \
 -Duser.home="${homeDirectory}" \
 2>&1 | tee ${workDirectory}/sourcesFetch.log
 
@@ -168,16 +171,15 @@ find -depth -name CVS -exec rm -rf {} \;
 
 # Remove prebuilt binaries
 find \( -name '*.exe' -o -name '*.dll' \) -delete
-find \( -name '*.so' -o -name '*.so.2' -o -name '*.a' \) -delete
+find -type f \( -name '*.so' -o -name '*.so.2' -o -name '*.a' \) -delete
 find \( -name '*.sl' -o -name '*.jnilib' \) -delete
-find features/org.eclipse.equinox.executable -name eclipse -delete
 find \( -name '*.cvsignore' \) -delete
 
 # Remove unnecessary repo
 rm -rf tempSite
 
 # Remove binary JARs
-find -name '*.jar' -delete
+find -type f -name '*.jar' -delete
 
 # Remove fetch logs
 rm fetch_*
@@ -218,6 +220,7 @@ fetchSdkTestsFeature \
 -DmapsRoot=${mapsRoot} \
 -DmapsCheckoutTag=${buildID} \
 -DmapVersionTag=${buildID} \
+-Dcommonrepo=${commonGitRepo} \
 -Duser.home="${homeDirectory}" \
 2>&1 | tee "${workDirectory}"/testsFetch.log
 

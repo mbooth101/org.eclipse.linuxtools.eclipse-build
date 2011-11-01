@@ -1,3 +1,15 @@
+2011-11-01  Sami Wagiaalla  <swagiaal@redhat.com>
+
+	* pdebuild.xml: Remove org.apache.lucene.
+	* buildSDKSource.sh: Update eclipse builder
+	and basebuilder tags.
+	Add common git repo pointer and pass it to fetchers.
+	Prefent find -delete statements from matching directorys ending
+	with .jar and .a.
+	Remove deletion of features/org.eclipse.equinox.executable.
+	* patches/eclipse-removeSkipMapsCheck.patch: Update patch so it
+	applies cleanly.
+
 2011-10-31  Sami Wagiaalla  <swagiaal@redhat.com>
 
 	* build.xml: Move running of the initializer to its own

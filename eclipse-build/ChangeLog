@@ -1,3 +1,9 @@
+2011-11-02  Sami Wagiaalla  <swagiaal@redhat.com>
+
+	* buildSDKSource.sh: Update tags to R3_7_1.
+	* build.properties: Update labels.
+	* pdebuild.properties: ditto.
+
 2011-11-01  Sami Wagiaalla  <swagiaal@redhat.com>
 
 	* pdebuild.xml: Remove org.apache.lucene.

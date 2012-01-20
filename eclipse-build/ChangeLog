@@ -1,3 +1,8 @@
+2012-01-20  Sami Wagiaalla  <swagiaal@redhat.com>
+
+	* patches/eclipse-dont-link-in-orbit2.patch: New patch.
+	* build.xml: Apply patch eclipse-dont-link-in-orbit2.patch.
+
 2011-12-19  Roland Grunberg  <rgrunber@redhat.com>
 
 	* jdtnonosgidependencies.properties:

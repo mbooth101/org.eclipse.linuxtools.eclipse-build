@@ -14,14 +14,14 @@
 
 
 # EMF is needed for 4.2 build
-feature@org.eclipse.emf.common=GIT,tag=R2_8_0,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=features/org.eclipse.emf.common-feature
-feature@org.eclipse.emf.ecore=GIT,tag=R2_8_0,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=features/org.eclipse.emf.ecore-feature
-feature@org.eclipse.emf.license=GIT,tag=R2_8_0,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=features/org.eclipse.emf.license-feature
+feature@org.eclipse.emf.common=GIT,tag=14eb839f5e2829d072db6e0e023d28e67e585b7e,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=features/org.eclipse.emf.common-feature
+feature@org.eclipse.emf.ecore=GIT,tag=14eb839f5e2829d072db6e0e023d28e67e585b7e,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=features/org.eclipse.emf.ecore-feature
+feature@org.eclipse.emf.license=GIT,tag=14eb839f5e2829d072db6e0e023d28e67e585b7e,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=features/org.eclipse.emf.license-feature
 
-plugin@org.eclipse.emf.common=GIT,tag=R2_8_0,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=plugins/org.eclipse.emf.common
-plugin@org.eclipse.emf.ecore=GIT,tag=R2_8_0,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=plugins/org.eclipse.emf.ecore
-plugin@org.eclipse.emf.ecore.change=GIT,tag=R2_8_0,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=plugins/org.eclipse.emf.ecore.change
-plugin@org.eclipse.emf.ecore.xmi=GIT,tag=R2_8_0,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=plugins/org.eclipse.emf.ecore.xmi
+plugin@org.eclipse.emf.common=GIT,tag=14eb839f5e2829d072db6e0e023d28e67e585b7e,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=plugins/org.eclipse.emf.common
+plugin@org.eclipse.emf.ecore=GIT,tag=14eb839f5e2829d072db6e0e023d28e67e585b7e,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=plugins/org.eclipse.emf.ecore
+plugin@org.eclipse.emf.ecore.change=GIT,tag=14eb839f5e2829d072db6e0e023d28e67e585b7e,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=plugins/org.eclipse.emf.ecore.change
+plugin@org.eclipse.emf.ecore.xmi=GIT,tag=14eb839f5e2829d072db6e0e023d28e67e585b7e,repo=git://git.eclipse.org/gitroot/emf/org.eclipse.emf.git,path=plugins/org.eclipse.emf.ecore.xmi
 
 
 # Equinox initializer

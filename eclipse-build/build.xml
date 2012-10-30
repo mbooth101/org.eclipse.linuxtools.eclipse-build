@@ -7,6 +7,11 @@
 
 	<property environment="env"/>
 	<property name="jhome" value="${env.JAVA_HOME}"/>
+	
+	<!--The eclipse.ini may be located somewhere else then in the /etc/,
+	f.e. in /opt/rh/.../etc/ . It's important to symlink to a proper location -->
+	<property name="alternativeRoot" value=""/>
+	
 	<condition property="javaHomeExists">
 		<resourceexists>
 			<file file="${jhome}"/>
@@ -400,7 +405,7 @@
 		
 		<patch patchfile="${basedir}/patches/e4-buildEMFSource.patch" dir="${buildDirectory}" strip="2" />
 
-		<replace file="${buildDirectory}/plugins/org.eclipse.pde.build/templates/package-build/build.properties" token="/usr/share/eclipse" value="/usr/${libDir}/eclipse" />
+		<replace file="${buildDirectory}/plugins/org.eclipse.pde.build/templates/package-build/build.properties" token="/usr/share/eclipse" value="${alternativeRoot}/${prefix}/${libDir}/eclipse" />
 		<chmod dir="${buildDirectory}/plugins/org.eclipse.pde.build/templates/package-build" includes="*.sh" perm="a+x" />
 		
 		<!-- end eclipse-build-only patches -->
@@ -983,7 +988,7 @@
 		<symlink link="${installationDir}/swt-gtk.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
 		<symlink link="${installationDir}/swt.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
 
-		<echo append="true" file="${installationDir}/eclipse.ini" message="-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=${prefix}/share/eclipse/dropins" />
+		<echo append="true" file="${installationDir}/eclipse.ini" message="-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=${alternativeRoot}/${prefix}/share/eclipse/dropins" />
 
 		<!-- Extract SWT JNI .so files -->
 		<antcall target="extractSos">
@@ -1076,7 +1081,7 @@
 		<!-- Move config file to /etc -->
 		<mkdir dir="${destDir}/etc" />
 		<move file="${installationDir}/eclipse.ini" tofile="${destDir}/etc/eclipse.ini" />
-		<symlink link="${installationDir}/eclipse.ini" resource="/etc/eclipse.ini" overwrite="true"/>
+		<symlink link="${installationDir}/eclipse.ini" resource="${alternativeRoot}/etc/eclipse.ini" overwrite="true"/>
 
 	</target>
 

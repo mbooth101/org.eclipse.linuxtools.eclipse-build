@@ -1,0 +1,35 @@
+--- eclipse-4.2.1-M20120914-1800-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak.bak	2012-10-01 17:30:53.000000000 +0200
++++ eclipse-4.2.1-M20120914-1800-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_linux.mak	2012-11-09 13:17:09.972074671 +0100
+@@ -106,7 +106,7 @@
+ WEBKIT_OBJECTS = swt.o webkit.o webkit_structs.o webkit_stats.o
+ GLX_OBJECTS = swt.o glx.o glx_structs.o glx_stats.o
+ 
+-CFLAGS = -O -Wall \
++CFLAGS = -g -O -Wall \
+ 		-DSWT_VERSION=$(SWT_VERSION) \
+ 		$(NATIVE_STATS) \
+ 		-DLINUX -DGTK \
+@@ -116,12 +116,6 @@
+ 		${SWT_PTR_CFLAGS}
+ LFLAGS = -shared -fPIC ${SWT_LFLAGS}
+ 
+-ifndef NO_STRIP
+-	AWT_LFLAGS := $(AWT_LFLAGS) -s
+-	MOZILLALFLAGS := $(MOZILLALFLAGS) -s
+-	LFLAGS := $(LFLAGS) -s
+-endif
+-
+ all: make_swt make_atk make_glx make_webkit
+ 
+ #
+--- eclipse-4.2.1-M20120914-1800-src/features/org.eclipse.equinox.executable/library/gtk/make_linux.mak.bak  2012-10-01 11:54:47.000000000 +0200
++++ eclipse-4.2.1-M20120914-1800-src/features/org.eclipse.equinox.executable/library/gtk/make_linux.mak  2012-11-08 08:27:37.562861710 +0100
+@@ -45,7 +45,7 @@
+ LIBS = -lpthread -ldl
+ GTK_LIBS = -DGTK_LIB="\"libgtk-x11-2.0.so.0\"" -DGDK_LIB="\"libgdk-x11-2.0.so.0\"" -DPIXBUF_LIB="\"libgdk_pixbuf-2.0.so.0\"" -DGOBJ_LIB="\"libgobject-2.0.so.0\"" -DX11_LIB="\"libX11.so.6\""
+ LFLAGS = ${M_ARCH} -shared -fpic -Wl,--export-dynamic 
+-CFLAGS = ${M_ARCH} -g -s -Wall\
++CFLAGS = ${M_ARCH} -g -Wall\
+ 	-fpic \
+ 	-DLINUX \
+ 	-DMOZILLA_FIX \
